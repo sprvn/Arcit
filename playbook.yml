@@ -4,6 +4,7 @@
   roles:
     - { role: base, tags: ['base'] }
     - { role: xorg, tags: ['xorg'] }
+    - { role: lightdm, tags: ['lightdm'] }
 
   vars_prompt:
     - name: "pass"
