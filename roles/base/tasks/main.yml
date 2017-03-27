@@ -9,7 +9,7 @@
     - user
 
 - name: Create user
-  user: name={{ user.name }} group={{ user.group }} shell={{ user.shell }}
+  user: name={{ user.name }} group={{ user.group }} shell={{ user.shell }} password={{ pass|password_hash('sha512') }}
   tags:
     - user
 
