@@ -10,4 +10,4 @@ base_packages:
   - git
 
 aur_packages:
-  - i3-gaps-next-git
+#  - i3-gaps-next-git
