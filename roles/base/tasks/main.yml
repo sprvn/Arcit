@@ -3,11 +3,35 @@
   hostname: name={{ hostname }}
   when: hostname is defined
 
+- name: Create group
+  group: name={{ user.group }} state=present
+  tags:
+    - user
+
+- name: Create user
+  user: name={{ user.name }} group={{ user.group }} shell={{ user.shell }}
+  tags:
+    - user
+
+- name: Create AUR directory
+  file: path=/home/{{ user.name }}/aur state=directory owner={{ user.name }} group={{ user.group }}
+
 - name: Install packages
   pacman: name={{ item }} state=present
   with_items: "{{ base_packages }}"
   tags:
     - packages
 
+#AUR uses cower if present, otherwise cURL
+- name: Install cower
+  aur: name=cower user={{ user.name }} skip_pgp=yes
+  tags:
+    - packages
+    - aur
+
 - name: Install AUR packages
-  aur: name=cower user=root skip_pgp=yes
+  aur: name={{ item }} user={{ user.name }}
+  with_items: "{{ aur_packages }}"
+  tags:
+    - packages
+    - aur

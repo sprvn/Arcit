@@ -1,5 +1,14 @@
+user:
+  name: sprvn
+  group: sprvn
+  shell: /bin/bash
+
 hostname: sprrw
 
 base_packages:
   - base-devel
   - git
+
+aur_packages:
+  - i3-gaps-next-git
+  - i3blocks
