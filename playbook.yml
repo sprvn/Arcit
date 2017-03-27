@@ -5,6 +5,7 @@
     - { role: base, tags: ['base'] }
     - { role: xorg, tags: ['xorg'] }
     - { role: lightdm, tags: ['lightdm'] }
+    - { role: set-keymap, tags: ['set-keymap'] }
 
   vars_prompt:
     - name: "pass"

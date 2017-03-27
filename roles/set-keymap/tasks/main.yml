@@ -1,0 +1,7 @@
+---
+
+- name: Install set-keymap se
+  shell: localectl set-keymap se
+
+- name: Install set-x11-keymap se
+  shell: localectl set-x11-keymap se
