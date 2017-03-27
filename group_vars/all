@@ -11,4 +11,3 @@ base_packages:
 
 aur_packages:
   - i3-gaps-next-git
-  - i3blocks

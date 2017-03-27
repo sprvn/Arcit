@@ -9,12 +9,25 @@
     - user
 
 - name: Create user
-  user: name={{ user.name }} group={{ user.group }} shell={{ user.shell }} password={{ pass|password_hash('sha512') }}
+  user: name={{ user.name }} groups={{ user.group }},wheel shell={{ user.shell }} password={{ pass|password_hash('sha512') }}
   tags:
     - user
 
+- name: Install sudo
+  pacman: name=sudo state=present
+  tags:
+    - sudo
+
+- name: Add wheels to sudoers
+  blockinfile:
+    dest: /etc/sudoers
+    block: "%wheel ALL=(ALL) ALL"
+
 - name: Create AUR directory
   file: path=/home/{{ user.name }}/aur state=directory owner={{ user.name }} group={{ user.group }}
+  tags:
+    - packages
+    - aur
 
 - name: Install packages
   pacman: name={{ item }} state=present
