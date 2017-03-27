@@ -1,0 +1,26 @@
+---
+- name: Install xorg-server
+  pacman: name=xorg-server state=present
+
+- name: Install xorg-server-utils
+  pacman: name=xorg-server-utils state=present
+
+- name: Install xorg-xinit
+  pacman: name=xorg-xinit state=present
+
+- name: Install xorg-twm
+  pacman: name=xorg-twm state=present
+
+- name: Install xorg-xclock
+  pacman: name=xorg-xclock state=present
+
+- name: Install xterm
+  pacman: name=xterm state=present
+
+- name: Install virtualbox-guest-utils
+  pacman: name=virtualbox-guest-utils
+  when: "'virtualbox' in ansible_virtualization_type"
+
+- name: Install linux-headers
+  pacman: name=linux-headers
+  when: "'virtualbox' in ansible_virtualization_type"
