@@ -11,3 +11,10 @@ base_packages:
 
 aur_packages:
 #  - i3-gaps-next-git
+
+dotfiles_path: https://github.com/sprvn/dotfiles
+
+dotfiles:
+  - .i3
+  - .vim
+  - .vimrc
