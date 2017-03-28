@@ -45,5 +45,6 @@ dotfiles:
 lightdm:
   - background=/usr/share/pictures/lockscreen
   - hide-user-image=true
+  - indicators=~spacer;~clock;~spacer;~session;~power
   #- { id: 'background=', value: '/usr/share/pictures/lockscreen' }
   #- { id: 'hide-user-image = ', value: 'true' }
