@@ -1,0 +1,17 @@
+---
+
+- name: Copy gnome.conf
+  copy: src=gnome.conf dest=/tmp/ owner={{ user.name }} group={{ user.group }}
+
+- name: Get gnome-terminal profile ID
+  shell: dconf dump /org/gnome/terminal/legacy/profiles:/ | grep -e "\[:\|visible-name" | sed 's/\[//g; s/\]//g'
+  register: terminalID
+
+- name: Insert gnome-terminal profile ID
+  replace: dest=/tmp/gnome.conf regexp='###ID###' replace={{ terminalID.stdout }}
+  when: terminalID is defined
+
+- name: Push gnome-terminal config
+  shell: dconf load /org/gnome/terminal/legacy/profiles:/ < /tmp/gnome.conf
+  when: terminalID is defined
+

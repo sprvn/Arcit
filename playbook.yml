@@ -8,6 +8,7 @@
     - { role: set-keymap, tags: ['set-keymap'] }
     - { role: dotfiles, tags: ['dotfiles'] }
     - { role: fonts, tags: ['fonts'] }
+    - { role: terminal, tags: ['terminal'] }
 
   vars_prompt:
     - name: "pass"
