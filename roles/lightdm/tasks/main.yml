@@ -19,9 +19,14 @@
     src: /home/{{ user.name }}/Pictures/lockscreen
     dest: /usr/share/pictures
 
-- name: Set background
+- name: Update config
   lineinfile:
     path: /etc/lightdm/lightdm-gtk-greeter.conf
-    regexp: "^#{{ item.id }}"
-    line: "{{ item.id }}{{ item.value }}"
+    line: "{{ item }}"
   with_items: "{{ lightdm }}"
+
+- name: Change theme, from archwiki
+  lineinfile:
+    path: /usr/share/xgreeters/lightdm-gtk-greeter.desktop
+    regexp: "^Exec"
+    line: "Exec=env GTK_THEME=Adwaita:dark lightdm-gtk-greeter"

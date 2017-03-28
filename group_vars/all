@@ -43,4 +43,7 @@ dotfiles:
   - .vimrc
 
 lightdm:
-  - { id: 'background=', value: '/usr/share/pictures/lockscreen' }
+  - background=/usr/share/pictures/lockscreen
+  - hide-user-image=true
+  #- { id: 'background=', value: '/usr/share/pictures/lockscreen' }
+  #- { id: 'hide-user-image = ', value: 'true' }

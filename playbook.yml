@@ -4,12 +4,12 @@
   roles:
     - { role: base, tags: ['base'] }
     - { role: xorg, tags: ['xorg'] }
+    - { role: images, tags: ['images'] }
     - { role: lightdm, tags: ['lightdm'] }
     - { role: set-keymap, tags: ['set-keymap'] }
     - { role: dotfiles, tags: ['dotfiles'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: terminal, tags: ['terminal'] }
-    - { role: images, tags: ['images'] }
 
   vars_prompt:
     - name: "pass"
