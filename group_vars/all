@@ -9,8 +9,26 @@ base_packages:
   - base-devel
   - git
 
+base_software:
+  - chromium
+  - compton
+  - feh
+  - firejail
+  - gnome-keyring
+  - gnome-terminal
+  - htop
+  - i3lock
+  - keepassx2
+  - networkmanager
+  - network-manager-applet
+  - rofi
+  - thunar
+  - vim
+  - hdparm
+
 aur_packages:
-#  - i3-gaps-next-git
+  - i3-gaps-next-git
+  - i3blocks-git
 
 dotfiles_path: https://github.com/sprvn/dotfiles
 
