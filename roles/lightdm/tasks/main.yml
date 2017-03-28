@@ -8,3 +8,19 @@
 
 - name: Enable lightdm
   service: name=lightdm enabled=yes
+
+- name: Create lightdm-background directory
+  file:
+    path: /usr/share/pictures
+    state: directory
+
+- name: Copy lockscreen-image
+  copy:
+    src: /home/{{ user.name }}/Pictures/lockscreen
+    dest: /usr/share/pictures
+
+- name: Set background
+  lineinfile:
+    path: /etc/lightdm/lightdm-gtk-greeter.conf
+    regexp: '^#background='
+    line: 'background=/usr/share/pictures/lockscreen'
