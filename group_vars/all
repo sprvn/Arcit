@@ -24,6 +24,7 @@ base_software:
   - thunar
   - vim
   - hdparm
+  - ttf-dejavu
 
 aur_packages:
   - i3-gaps-next-git
