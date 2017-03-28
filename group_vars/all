@@ -15,7 +15,6 @@ base_software:
   - feh
   - firejail
   - gnome-keyring
-  - gnome-terminal
   - htop
   - i3lock
   - keepassx2
