@@ -9,6 +9,7 @@
     - { role: dotfiles, tags: ['dotfiles'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: terminal, tags: ['terminal'] }
+    - { role: images, tags: ['images'] }
 
   vars_prompt:
     - name: "pass"

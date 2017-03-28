@@ -1,0 +1,24 @@
+---
+
+- name: Check if /home/{{ user.name }}/Pictures exists
+  file:
+     path: /home/{{ user.name }}/Pictures
+     owner: "{{ user.name }}"
+     group: "{{ user.group }}"
+     state: directory
+
+- name: Download wallpaper
+  get_url:
+    url: https://alpha.wallhaven.cc/wallpapers/full/wallhaven-6413.jpg
+    dest: /home/{{ user.name }}/Pictures/wallpaper
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    validate_certs: False
+
+- name: Download lockscreen
+  get_url:
+    url: https://alpha.wallhaven.cc/wallpapers/full/wallhaven-6413.jpg
+    dest: /home/{{ user.name }}/Pictures/lockscreen
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    validate_certs: False
