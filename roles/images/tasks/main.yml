@@ -50,11 +50,15 @@
     dest: "/home/{{ user.name }}/Pictures/wallpaper" 
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
+  tags:
+    - imagemagick
 
 - name: Delete old wallpaper
   file: 
     path: "/home/{{ user.name }}/Pictures/wallpaper.png" 
     state: absent
+  tags:
+    - imagemagick
 
 - name: Move lockscreen
   copy: 
@@ -62,14 +66,20 @@
     dest: "/home/{{ user.name }}/Pictures/lockscreen"
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
+  tags:
+    - imagemagick
 
 - name: Delete old wallpaper
   file: 
     path: "/home/{{ user.name }}/Pictures/lockscreen.png" 
     state: absent
+  tags:
+    - imagemagick
 
 - name: Uninstall imagemagick
   pacman:
     name: imagemagick
     state: absent
     recurse: yes
+  tags:
+    - imagemagick
