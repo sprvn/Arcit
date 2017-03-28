@@ -6,8 +6,8 @@ user:
 hostname: sprrw
 
 images:
-  wallpaper: 
-  lockscreen: 
+  wallpaper: https://alpha.wallhaven.cc/wallpapers/full/wallhaven-6413.jpg
+  lockscreen: https://alpha.wallhaven.cc/wallpapers/full/wallhaven-6413.jpg
 
 base_packages:
   - base-devel

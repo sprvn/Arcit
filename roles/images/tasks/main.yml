@@ -9,7 +9,7 @@
 
 - name: Download wallpaper
   get_url:
-    url: https://alpha.wallhaven.cc/wallpapers/full/wallhaven-6413.jpg
+    url: "{{ images.wallpaper }}"
     dest: /home/{{ user.name }}/Pictures/wallpaper
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
@@ -17,8 +17,59 @@
 
 - name: Download lockscreen
   get_url:
-    url: https://alpha.wallhaven.cc/wallpapers/full/wallhaven-6413.jpg
+    url: "{{ images.lockscreen }}"
     dest: /home/{{ user.name }}/Pictures/lockscreen
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
     validate_certs: False
+
+- name: Install Imagemagick for image conversion
+  pacman: name=imagemagick state=present
+  tags:
+    - imagemagick
+
+- name: Convert wallpaper to PNG
+  shell: convert wallpaper wallpaper.png
+  args:
+    chdir: "/home/{{ user.name }}/Pictures"
+  ignore_errors: yes
+  tags:
+    - imagemagick
+  
+- name: Convert lockscreen to PNG
+  shell: convert lockscreen lockscreen.png
+  args:
+    chdir: "/home/{{ user.name }}/Pictures"
+  ignore_errors: yes
+  tags:
+    - imagemagick
+
+- name: Move wallpaper
+  copy: 
+    src: "/home/{{ user.name }}/Pictures/wallpaper.png" 
+    dest: "/home/{{ user.name }}/Pictures/wallpaper" 
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+
+- name: Delete old wallpaper
+  file: 
+    path: "/home/{{ user.name }}/Pictures/wallpaper.png" 
+    state: absent
+
+- name: Move lockscreen
+  copy: 
+    src: "/home/{{ user.name }}/Pictures/lockscreen.png" 
+    dest: "/home/{{ user.name }}/Pictures/lockscreen"
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+
+- name: Delete old wallpaper
+  file: 
+    path: "/home/{{ user.name }}/Pictures/lockscreen.png" 
+    state: absent
+
+- name: Uninstall imagemagick
+  pacman:
+    name: imagemagick
+    state: absent
+    recurse: yes
