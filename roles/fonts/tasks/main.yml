@@ -1,0 +1,22 @@
+---
+
+- name: Create .fonts
+  file: path=/home/{{ user.name }}/.fonts state=directory owner={{ user.name }} group={{ user.group }} 
+
+- name: Create temporary directory
+  file: path=/tmp/fonts state=directory
+
+- name: Pull San Francisco font
+  git: repo=https://github.com/supermarin/YosemiteSanFranciscoFont.git dest=/tmp/fonts
+
+- name: Copying fonts to .fonts
+  shell: cp /tmp/fonts/*.ttf /home/{{ user.name }}/.fonts
+
+- name: Pull Font-Awesome font
+  git: repo=https://github.com/FortAwesome/Font-Awesome.git dest=/tmp/fonts
+
+- name: Copying fonts to .fonts
+  shell: cp /tmp/fonts/fonts/*.ttf /home/{{ user.name }}/.fonts
+
+- name: Permissions
+  file: path=/home/{{ user.name }}/.fonts state=directory owner={{ user.name }} group={{ user.group }} recurse=yes
