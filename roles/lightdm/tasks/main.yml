@@ -22,5 +22,6 @@
 - name: Set background
   lineinfile:
     path: /etc/lightdm/lightdm-gtk-greeter.conf
-    regexp: '^#background='
-    line: 'background=/usr/share/pictures/lockscreen'
+    regexp: "^#{{ item.id }}"
+    line: "{{ item.id }}{{ item.value }}"
+  with_items: "{{ lightdm }}"

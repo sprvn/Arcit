@@ -41,3 +41,6 @@ dotfiles:
   - .i3
   - .vim
   - .vimrc
+
+lightdm:
+  - { id: 'background=', value: '/usr/share/pictures/lockscreen' }
