@@ -10,21 +10,21 @@
   tags:
     - gnome-terminal
 
-- name: Get gnome-terminal profile ID
-  shell: dconf dump /org/gnome/terminal/legacy/profiles:/ | grep -e "\[:\|visible-name" | sed 's/\[//g; s/\]//g'
-  register: terminalID
-  tags:
-    - gnome-terminal
+      #- name: Get gnome-terminal profile ID
+      #  shell: dconf dump /org/gnome/terminal/legacy/profiles:/ | grep -e "\[:\|visible-name" | sed 's/\[//g; s/\]//g'
+      #  register: terminalID
+      #  tags:
+      #    - gnome-terminal
 
-- name: Insert gnome-terminal profile ID
-  replace: dest=/tmp/gnome.conf regexp='###ID###' replace={{ terminalID.stdout }}
-  when: terminalID is defined
-  tags:
-    - gnome-terminal
+      #- name: Insert gnome-terminal profile ID
+      #  replace: dest=/tmp/gnome.conf regexp='###ID###' replace={{ terminalID.stdout }}
+      #  when: terminalID.stdout is defined
+      #  tags:
+      #    - gnome-terminal
 
 - name: Push gnome-terminal config
-  shell: dconf load /org/gnome/terminal/legacy/profiles:/ < /tmp/gnome.conf
-  when: terminalID is defined
+  shell: dconf load /org/gnome/terminal/ < /tmp/gnome.conf
+  #  when: terminalID.stdout is defined
   tags:
     - gnome-terminal
 
