@@ -13,7 +13,7 @@
     dest: /home/{{ user.name }}/Pictures/wallpaper
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
-    validate_certs: False
+    #validate_certs: False
 
 - name: Download lockscreen
   get_url:
@@ -21,7 +21,7 @@
     dest: /home/{{ user.name }}/Pictures/lockscreen
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
-    validate_certs: False
+    #validate_certs: False
 
 - name: Install Imagemagick for image conversion
   pacman: name=imagemagick state=present
