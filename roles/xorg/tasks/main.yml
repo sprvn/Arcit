@@ -2,8 +2,8 @@
 - name: Install xorg-server
   pacman: name=xorg-server state=present
 
-- name: Install xorg-server-utils
-  pacman: name=xorg-server-utils state=present
+#- name: Install xorg-server-utils
+#  pacman: name=xorg-server-utils state=present
 
 - name: Install xorg-xinit
   pacman: name=xorg-xinit state=present
