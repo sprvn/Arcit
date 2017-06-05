@@ -7,4 +7,6 @@ A symlink fixes this:
 
 `ln -s /usr/bin/python2.7 /usr/bin/python`
 
+## Execution
+
 `ansible-playbook playbook.yml -i localhost`
