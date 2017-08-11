@@ -17,6 +17,15 @@
 - name: Install xterm
   pacman: name=xterm state=present
 
+- name: Install xf86-video-nouveau
+  pacman: name=xf86-video-nouveau state=present
+
+  #- name: Install lib32-nouveau-dri
+  #  pacman: name=lib32-nouveau-dri state=present
+
+- name: Install lib32-mesa
+  pacman: name=lib32-mesa state=present
+
 - name: Install virtualbox-guest-utils
   pacman: name=virtualbox-guest-utils
   when: "'virtualbox' in ansible_virtualization_type"
