@@ -19,12 +19,11 @@
 
 - name: Install xf86-video-nouveau
   pacman: name=xf86-video-nouveau state=present
-
-  #- name: Install lib32-nouveau-dri
-  #  pacman: name=lib32-nouveau-dri state=present
+  when: video_driver == "nvidia"
 
 - name: Install lib32-mesa
   pacman: name=lib32-mesa state=present
+  when: video_driver == "nvidia"
 
 - name: Install virtualbox-guest-utils
   pacman: name=virtualbox-guest-utils

@@ -37,6 +37,8 @@ aur_packages:
 
 dotfiles_path: https://github.com/sprvn/dotfiles
 
+video_driver: nvidia
+
 dotfiles:
   - .i3
   - .vim
