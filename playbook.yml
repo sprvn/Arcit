@@ -13,6 +13,7 @@
     - { role: networkmanager, tags: ['networkmanager'] }
     - { role: aws, tags: ['aws'] }
     - { role: clamav, tags: ['clamav'] }
+    - { role: yubikey, tags: ['yubikey'] }
 
   vars_prompt:
     - name: "pass"

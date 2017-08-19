@@ -1,0 +1,23 @@
+---
+
+- name: Install GPG
+  pacman: name=gnupg state=present
+
+- name: Install Yubikey Personalization GUI
+  pacman: name=yubikey-personalization-gui state=present
+
+- name: Install smartcards
+  pacman: name={{ item }} state=present
+  with_items:
+      - pcsclite
+      - libusb-compat
+      - ccid
+
+- name: Push .bashrc
+  copy: src=.bashrc dest=/home/{{ user.name }}/.bashrc owner={{ user.name }} group={{ user.group }}     
+
+- name: Create .gnupg if it doesn't exist
+  file: path="/home/{{ user.name }}/.gnupg" state=directory mode=0755 owner={{ user.name }} group={{ user.group }}
+
+- name: Puh gpg-agent.conf
+  copy: src=gpg-agent.conf dest=/home/{{ user.name }}/.gnupg/gpg-agent.conf owner={{ user.name }} group={{ user.group }}
