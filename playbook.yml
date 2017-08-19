@@ -11,6 +11,7 @@
     - { role: fonts, tags: ['fonts'] }
     - { role: terminal, tags: ['terminal'] }
     - { role: networkmanager, tags: ['networkmanager'] }
+    - { role: aws, tags: ['aws'] }
 
   vars_prompt:
     - name: "pass"
