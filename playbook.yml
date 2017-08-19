@@ -10,6 +10,7 @@
     - { role: dotfiles, tags: ['dotfiles'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: terminal, tags: ['terminal'] }
+    - { role: networkmanager, tags: ['networkmanager'] }
 
   vars_prompt:
     - name: "pass"
