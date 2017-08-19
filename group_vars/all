@@ -30,6 +30,7 @@ base_software:
   - hdparm
   - ttf-dejavu
   - wget
+  - screen
 
 aur_packages:
   - i3-gaps-next-git
