@@ -1,0 +1,9 @@
+---
+
+- name: Install network tools
+  pacman: name={{ item }} state=present
+  with_items:
+      - net-tools
+      - nmap
+      - traceroute
+
