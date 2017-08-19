@@ -12,6 +12,7 @@
     - { role: terminal, tags: ['terminal'] }
     - { role: networkmanager, tags: ['networkmanager'] }
     - { role: aws, tags: ['aws'] }
+    - { role: clamav, tags: ['clamav'] }
 
   vars_prompt:
     - name: "pass"

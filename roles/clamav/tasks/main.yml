@@ -1,0 +1,16 @@
+---
+
+- name: Install ClamAV
+  pacman: name=clamav state=present
+
+- name: Update virus definitions
+  shell: freshclam
+
+- name: Stop ClamAV daemon
+  service: name=clamd state=stopped
+
+- name: Start and enable ClamAV daemon
+  service: name=clamd enabled=yes state=started
+
+- name: Start and enable freshclam daemon
+  service: name=freshclamd enabled=yes state=started

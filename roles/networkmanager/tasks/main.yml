@@ -8,6 +8,5 @@
       - network-manager-applet
       - gnome-keyring
 
-
 - name: Enable and start NetworkManager
   service: name=NetworkManager enabled=yes state=started
