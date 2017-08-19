@@ -15,6 +15,7 @@
     - { role: clamav, tags: ['clamav'] }
     - { role: yubikey, tags: ['yubikey'] }
     - { role: nettools, tags: ['nettools'] }
+    - { role: slack-desktop, tags: ['slack-desktop'] }
 
   vars_prompt:
     - name: "pass"
