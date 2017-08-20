@@ -1,9 +1,9 @@
 user:
-  name: sprvn
-  group: sprvn
+  name: kevgus
+  group: kevgus
   shell: /bin/bash
 
-hostname: sprrw
+hostname: kal-pckevgus001
 
 images:
   wallpaper: https://alpha.wallhaven.cc/wallpapers/full/wallhaven-6413.jpg
@@ -21,7 +21,6 @@ base_software:
   - gnome-keyring
   - htop
   - i3lock
-  - keepassx2
   - networkmanager
   - network-manager-applet
   - rofi
