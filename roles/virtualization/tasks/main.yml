@@ -1,0 +1,9 @@
+---
+
+- name: Install VirtualBox
+  pacman: name=virtualbox state=present
+
+- name: Install Vagrant
+  pacman: name=vagrant state=present
+  tags:
+    - vagrant

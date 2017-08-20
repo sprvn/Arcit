@@ -16,6 +16,7 @@
     - { role: yubikey, tags: ['yubikey'] }
     - { role: nettools, tags: ['nettools'] }
     - { role: slack-desktop, tags: ['slack-desktop'] }
+    - { role: virtualization, tags: ['virtualization'] }
 
   vars_prompt:
     - name: "pass"
