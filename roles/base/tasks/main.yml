@@ -57,3 +57,16 @@
   tags:
     - packages
     - aur
+
+- name: Install PulseAudio
+  pacman: name=pulseaudio state=present
+  with_items:
+    - pulseaudio
+    - pulseaudio-bluetooth
+  tags:
+    - audio
+
+- name: Install Pavucontrol
+  pacman: name=pavucontrol state=present
+  tags:
+    - audio
