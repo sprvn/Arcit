@@ -34,6 +34,7 @@ base_software:
 aur_packages:
   - i3-gaps-next-git
   - i3blocks-git
+  - pacaur
 
 dotfiles_path: https://github.com/sprvn/dotfiles
 
