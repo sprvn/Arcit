@@ -17,6 +17,9 @@
 - name: Install xterm
   pacman: name=xterm state=present
 
+- name: Install xorg-xrandr
+  pacman: name=xorg-xrandr state=present
+
 - name: Install xf86-video-nouveau
   pacman: name=xf86-video-nouveau state=present
   when: video_driver == "nvidia"
