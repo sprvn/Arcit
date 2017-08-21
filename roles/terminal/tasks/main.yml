@@ -5,6 +5,9 @@
   tags:
     - gnome-terminal
 
+- name: Install bash-completion
+  pacman: name=bash-completion state=present
+
 - name: Copy gnome.conf
   copy: src=gnome.conf dest=/tmp/ owner={{ user.name }} group={{ user.group }}
   tags:
