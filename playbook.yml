@@ -17,6 +17,7 @@
     - { role: nettools, tags: ['nettools'] }
     - { role: slack-desktop, tags: ['slack-desktop'] }
     - { role: virtualization, tags: ['virtualization'] }
+    - { role: puppet, tags: ['puppet'] }
 
   vars_prompt:
     - name: "pass"

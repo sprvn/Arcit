@@ -1,0 +1,7 @@
+---
+
+- name: Install Puppet
+  pacman: name=puppet state=present
+
+- name: Install librarian-puppet
+  aur: name=librarian-puppet user={{ user.name }}
