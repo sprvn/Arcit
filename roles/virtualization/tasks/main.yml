@@ -10,3 +10,8 @@
   pacman: name=vagrant state=present
   tags:
     - vagrant
+
+- name: Install librarian-puppet
+  aur: name=librarian-puppet user={{ user.name }}
+  tags:
+    - vagrant
