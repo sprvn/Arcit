@@ -30,6 +30,8 @@ base_software:
   - ttf-dejavu
   - wget
   - screen
+  - acpi
+  - pamixer
 
 aur_packages:
   - i3-gaps-next-git
